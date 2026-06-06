@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 # Configuração inicial da página web
-st.set_page_config(page_title="Simulador de Financiamento Premium", page_icon="🚗", layout="centered")
+st.set_page_config(page_title="Simulador de Financiamento de Carros", page_icon="🚗", layout="centered")
 
 # --- FUNÇÃO DO POP-UP DE BLOQUEIO (MODAL OBRIGATÓRIO) ---
 @st.dialog("Aviso Importante")
@@ -135,7 +135,7 @@ if df_carros is not None and df_ipva is not None:
                 texto_exibicao_versao = st.text_input("Versão / Opcionais", placeholder="Ex: 1.4 LTPS, Sport, Griffe THP...")
             with col_m2:
                 ano_veiculo = st.number_input("Ano de Fabricação", min_value=1900, max_value=2030, value=2026, step=1)
-                estado_veiculo = st.selectbox("Condição do Veículo", ["Usado", "Novo"])
+                estado_veiculo = st.selectbox("Condição do Veículo", ["Novo", "Usado"])
                 estado_veiculo = estado_veiculo.lower()
             
             # Campo de valor que aceita APENAS números de ponto flutuante
