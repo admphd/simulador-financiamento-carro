@@ -336,7 +336,8 @@ if df_carros is not None and df_ipva is not None:
                         st.divider()
                         
                         if is_carro_novo:
-                            st.success(f"✨ **Veículo Zero Km:** Livre de imposto de IPVA no 1º ano! Projeções refletem a alíquota de {aliquota_ipva*100:.2f}% e taxa de licenciamento de {formatar_real(valor_licenciamento)} ({uf_sel}) a partir do 2º ano.")
+                            st.success(f"✨ **Veículo Zero Km:** Nos estados de GO e MS, veículos novos são livres de imposto de IPVA no 1º ano! Para os demais estados, considerar o valor de imposto de IPVA a partir do segundo ano. Projeções refletem a alíquota de {aliquota_ipva*100:.2f}% e taxa de licenciamento de {formatar_real(valor_licenciamento)} ({uf_sel}) a partir do 2º ano.")
+                            st.warning("⚠️ **Alíquota de IPVA:** Para os estados com Alíquota de IPVA variável, está sendo considerada a alíquota de maior valor para este cálculo.")
                             st.warning("⚠️ **Lembrete de Custos Extras (Falta incluir):** Lembre-se que para rodar com o veículo Novo você deverá levar em consideração os valores de **registro no Detran** e o **primeiro emplacamento**, que não estão inclusos nas contas automáticas acima.")
                         else:
                             st.info(f"ℹ️ **Veículo Usado ({ano_veiculo}):** IPVA, Licenciamento e Seguro calculados com base no valor integral atual e tabela regional de {uf_sel}.")
