@@ -264,6 +264,7 @@ if df_carros is not None:
                 
                 if is_carro_novo:
                     st.success("✨ **Veículo Zero Km:** Livre de imposto de IPVA no 1º ano! Valores de IPVA abaixo refletem a previsão a partir do 2º ano (com depreciação de 5% aplicada na base de cálculo).")
+                    st.warning("💰 Se o veículo possuir motor 1.0 (aspirado ou turbo), você recebe desconto de 50% no valor do IPVA caso não tenha cometido nenhuma infração de trânsito (sem multas).")
                     st.warning("⚠️ **Lembrete de Custos Extras (Falta incluir):** Lembre-se que para rodar com o veículo Novo você deverá levar em consideração os valores de **registro no Detran** e o **primeiro emplacamento**, que não estão inclusos nas contas automáticas acima.")
                 else:
                     st.info(f"ℹ️ **Veículo Usado ({ano_veiculo}):** IPVA e Seguro calculados com base no valor integral atual.")
