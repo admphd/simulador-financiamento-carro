@@ -312,7 +312,7 @@ if df_carros is not None and df_ipva is not None:
                             total_pago = parcela_mensal * num_parcelas
                             total_juros = total_pago - valor_financiado
 
-                            st.info(f"📊 Taxa aplicada: **{taxa_final:.2f}% a.m.** {banco_info}")
+                            st.info(f"📊 Taxa aplicada: **{taxa_final:.2f}% a.m.** {banco_info}. Fonte: Banco Central.")
                             
                             c_res1, c_res2 = st.columns(2)
                             with c_res1:
@@ -354,6 +354,7 @@ if df_carros is not None and df_ipva is not None:
                             st.metric(label="Custo Mensal Impostos", value=formatar_real(impostos_mensal_com_ipva))
                             if is_carro_novo:
                                 st.metric(label="Custo Mensal Impostos (1º Ano)", value=formatar_real(impostos_mensal_sem_ipva))
+                            else: st.metric(label="Custo Mensal Impostos", value=formatar_real(impostos_mensal_com_ipva))
                                 
                         with col_seguro:
                             st.markdown("### 🛡️ Seguro Estimado")
