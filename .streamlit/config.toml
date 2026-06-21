@@ -2,7 +2,6 @@
 gatherUsageStats = false
 
 [server]
-# Injeta o código do AdSense direto no cabeçalho principal do site
 headHtml = """
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586345782683003"
      crossorigin="anonymous"></script>
