@@ -6,16 +6,6 @@ import streamlit.components.v1 as components
 # Configuração inicial da página web
 st.set_page_config(page_title="Simulador de Financiamento de Carros", page_icon="🚗", layout="centered")
 
-# --- ATIVAÇÃO GLOBAL DO GOOGLE ADSENSE (CÓDIGO DE VERIFICAÇÃO) ---
-# Injeta o script necessário para o Google validar seu site e ativar os anúncios automáticos
-st.components.v1.html(
-    """
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586345782683003"
-         crossorigin="anonymous"></script>
-    """,
-    height=0,
-    scrolling=False
-)
 
 # --- FUNÇÃO DO POP-UP DE BLOQUEIO (MODAL OBRIGATÓRIO) ---
 @st.dialog("Aviso Importante")
@@ -102,28 +92,6 @@ def calcular_price(valor_financiado, taxa_juros_mensal, num_parcelas):
 # Função auxiliar para formatação de moeda brasileira (R$)
 def formatar_real(valor):
     return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
-
-
-# --- BLOCO DE ANÚNCIO DE EXIBIÇÃO (DISPLAY ADS) ---
-# Espaço estruturado para exibir banners dinâmicos do AdSense logo no cabeçalho
-st.markdown("<p style='text-align:center; font-size:10px; color:#aaa; margin-bottom: 2px; margin-top: 10px;'>PUBLICIDADE</p>", unsafe_allow_html=True)
-st.components.v1.html(
-    """
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586345782683003"
-         crossorigin="anonymous"></script>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8586345782683003"
-         data-ad-slot="auto"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    """,
-    height=100,
-    scrolling=False
-)
 
 
 # --- INTERFACE WEB ---
